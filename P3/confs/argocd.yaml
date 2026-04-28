@@ -1,20 +1,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: gitlap-app
+  name: my-app
   namespace: argocd
 spec:
   project: default
   source:
-    repoURL: "https://github.com/aelidrys/IOT_repo.git"
-    targetRevision: HEAD
-    path: manifest_files
+    repoURL: 'https://github.com/mel-garr/iot.git'
+    targetRevision: main
+    path: p3/confs/app
   destination:
-    server: "https://kubernetes.default.svc"
+    server: 'https://kubernetes.default.svc'
     namespace: dev
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
-    syncOptions:
-      - CreateNamespace=true

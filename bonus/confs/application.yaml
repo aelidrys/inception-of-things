@@ -8,10 +8,10 @@ spec:
   source:
     repoURL: "http://192.168.56.10/user_01/iot_repo.git"
     targetRevision: HEAD
-    path: manifest_files
+    path: manifests_files
   destination:
     server: "https://kubernetes.default.svc"
-    namespace: gitlap
+    namespace: gitlab
   syncPolicy:
     automated:
       prune: true
