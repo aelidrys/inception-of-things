@@ -14,6 +14,7 @@ Vagrant.configure("2") do |config|
     vb.cpus = 2
   end
 
+
   config.vm.provision "shell",
     path: "scripts/install_gitlab.sh",
     env: {"HOST_IP" => HOST_IP, "CLEAN_GITLAB" => "true"}
